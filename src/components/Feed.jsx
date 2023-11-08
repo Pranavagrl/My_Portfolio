@@ -5,8 +5,19 @@ import Projects from "./Projects";
 import Footer from "./Footer";
 
 const Feed = () => {
+  const handleDownload = () => {
+    const fileUrl =
+      "https://drive.google.com/file/d/1anXsi-gOxZjiqUdAnnsXmupZTHsvHJO2/view?usp=sharing";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", true);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <Box sx={{ marginX: 65 }}>
+
       <Box
         sx={{
           marginTop: 15,
@@ -44,16 +55,26 @@ const Feed = () => {
           }}
         />
       </Box>
-      <Button variant="contained" color="error" sx={{ opacity: 0.8 }}>
+
+      <Button
+        variant="contained"
+        color="error"
+        sx={{ opacity: 0.8 }}
+        onClick={handleDownload}
+      >
         Download Resume
       </Button>
 
       <Box sx={{ backgroundColor: "#EDF7FA", mt: 7 }}>
         <Certifications />
       </Box>
+
       <Typography sx={{ my: 3 }}>Projects</Typography>
+      
       <Projects projectsToShow={3} />
+      
       <Footer />
+      
     </Box>
   );
 };
