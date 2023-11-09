@@ -12,7 +12,7 @@ const Footer = () => {
         justifyContent: "center",
       }}
     >
-      <Box direction="row" sx={{ pt: 15 }}>
+      <Box direction="row" sx={{ pt: 10 }}>
         <Facebook sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />
         <Instagram sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />
         <Twitter sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />

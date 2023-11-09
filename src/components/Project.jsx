@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 const Project = () => {
   return (
-    <Box sx={{ paddingX: 50, paddingY: 10 }}>
+    <Box sx={{ marginX: { md: 20, lg: 40, sm: 10, xl: 60 }, marginTop: 7 }}>
       <Typography
         variant="h4"
         color="#21243D"

@@ -12,14 +12,17 @@ import Footer from "./Footer";
 
 const WorkExperience = () => {
   return (
-    <Box sx={{ paddingX: 50, paddingY: 10 }}>
+    <Box sx={{ marginX: { md: 20, lg: 40, sm: 10, xl: 60 }, marginTop: 7 }}>
       {WorkData.map((work) => (
         <Card sx={{ boxShadow: "none", mb: 2 }} key={work.id}>
           <Box display="flex">
             <CardMedia
               component="img"
-              s
-              sx={{ width: "230px", mr: 2 }}
+              sx={{
+                minWidth: { lg: "280px", md: "350px" },
+                width: { xl: "230px" },
+                mr: 2,
+              }}
               image={work.work_url}
               alt={work.company_name}
             />

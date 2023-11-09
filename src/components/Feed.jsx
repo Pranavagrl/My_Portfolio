@@ -16,8 +16,7 @@ const Feed = () => {
     document.body.removeChild(link);
   };
   return (
-    <Box sx={{ marginX: 65 }}>
-
+    <Box sx={{ marginX: { md: 20, lg: 40, sm: 10, xl: 60 } }}>
       <Box
         sx={{
           marginTop: 15,
@@ -70,11 +69,10 @@ const Feed = () => {
       </Box>
 
       <Typography sx={{ my: 3 }}>Projects</Typography>
-      
+
       <Projects projectsToShow={3} />
-      
+
       <Footer />
-      
     </Box>
   );
 };

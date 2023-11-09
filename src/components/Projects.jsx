@@ -12,7 +12,7 @@ import projectData from "../utils/ProjectData";
 const Projects = ({ projectsToShow }) => {
   const projectsToDisplay = projectData.slice(0, projectsToShow);
   return (
-    <Box>
+    <Box >
       {projectsToDisplay.map((project) => (
         <Card sx={{ boxShadow: "none", mb: 2 }} key={project.id}>
           <Box display="flex">

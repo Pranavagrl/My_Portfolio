@@ -20,6 +20,8 @@ const Contact = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          border: "2px solid #21243D",
+          borderRadius: "5px",
         }}
       >
         <Typography
