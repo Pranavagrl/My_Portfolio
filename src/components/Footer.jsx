@@ -4,21 +4,14 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <Box sx={styles.container}>
       <Box direction="row" sx={{ pt: 10 }}>
-        <Facebook sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />
-        <Instagram sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />
-        <Twitter sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />
-        <LinkedIn sx={{ pr: 2, fontSize: "35px", color: "#21243D" }} />
+        <Facebook sx={styles.iconStyle} />
+        <Instagram sx={styles.iconStyle} />
+        <Twitter sx={styles.iconStyle} />
+        <LinkedIn sx={styles.iconStyle} />
       </Box>
-      <Typography variant="subtitle1" sx={{ pt: 1, pb: 5, color: "#21243D" }}>
+      <Typography sx={styles.footerText}>
         Copyright ©2020 All rights reserved
       </Typography>
     </Box>
@@ -26,3 +19,16 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  iconStyle: { pr: 2, fontSize: { md: 80, lg: 70 }, color: "#21243D" },
+
+  footerText: { fontSize: { md: 30, lg: 20 }, pt: 1, pb: 5, color: "#21243D" },
+};

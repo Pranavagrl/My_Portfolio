@@ -1,51 +1,79 @@
-import { Box, Card, CardContent, Link, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import React from "react";
+import CertificationsData from "../utils/CertificationsData";
 
 const Certifications = () => {
   return (
     <Box>
-      <Box
-        sx={{ display: "flex", justifyContent: "space-between", mb: 2, p: 1 }}
-      >
-        <Typography>Certifications</Typography>
-        <Link href="ViewAll">View all</Link>
+      <Box sx={styles.heading_container}>
+        <Typography sx={{ fontSize: { md: 40, lg: 18 } }}>
+          Certifications
+        </Typography>
       </Box>
-      <Box display="flex" justifyContent="space-evenly" pb={5}>
-        <Card sx={{ width: 290, mx: 3 }}>
-          <CardContent>
-            <Typography sx={{ fontSize: 18, fontWeight: "bold", mb: 1 }}>
-              Web Development Course
-            </Typography>
-            <Box display="flex" sx={{ mb: 2 }}>
-              <Typography sx={{ mr: 1 }}>30 June 2021</Typography>|
-              <Typography sx={{ ml: 1 }}>Frontend</Typography>
-            </Box>
-            <Typography variant="body2">
-              Developed a Filtered To-do List and Virtual piano as a project in
-              this program
-            </Typography>
-          </CardContent>
-        </Card>
-
-        <Card sx={{ width: 290, mx: 3 }}>
-          <CardContent>
-            <Typography sx={{ fontSize: 18, fontWeight: "bold", mb: 1 }}>
-              Data Scientist Course(MLDL)
-            </Typography>
-            <Box display="flex" sx={{ mb: 2 }}>
-              <Typography sx={{ mr: 1 }}>20 June 2022</Typography>|
-              <Typography sx={{ ml: 1 }}>AI</Typography>
-            </Box>
-            <Typography variant="body2">
-              In This Machine Learning Course, I have been worked on different
-              Project like Flipkart Review Scrapper, Income Prediction, Wafer
-              Fault Detection and many more.
-            </Typography>
-          </CardContent>
-        </Card>
+      <Box sx={styles.card_container}>
+        {CertificationsData.map((certification) => (
+          <Card key={certification.id} sx={styles.card_element}>
+            <CardContent sx={{ p: 3 }}>
+              <Typography sx={styles.card_header}>
+                {certification.title}
+              </Typography>
+              <Box display="flex" sx={styles.date_container}>
+                <Typography sx={styles.date}>{certification.date}</Typography>|
+                <Typography sx={styles.category}>
+                  {certification.category}
+                </Typography>
+              </Box>
+              <Typography sx={styles.description}>
+                {certification.description}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </Box>
     </Box>
   );
+};
+
+const styles = {
+  heading_container: {
+    display: "flex",
+    justifyContent: {
+      sm: "center",
+      md: "center",
+      lg: "space-evenly",
+      xl: "space-evenly",
+    },
+    mb: 2,
+    pt: 3,
+  },
+  card_container: {
+    display: "flex",
+    flexDirection: { sm: "column", md: "column", lg: "row", xl: "row" },
+    justifyContent: {
+      sm: "center",
+      md: "center",
+      lg: "space-evenly",
+      xl: "space-evenly",
+    },
+    pb: 5,
+  },
+  card_element: {
+    borderRadius: 5,
+    width: { lg: 380 },
+    m: { sm: 5, lg: 0 },
+    minHeight: { md: 500, lg: 266.5 },
+  },
+  card_header: {
+    fontSize: { md: 60, lg: 25 },
+    fontWeight: "bold",
+    mb: 1,
+  },
+  date_container: { fontSize: { md: 60, lg: 20 }, mb: 2 },
+  date: { fontSize: { md: 50, lg: 20 }, mr: 1 },
+  category: { fontSize: { md: 50, lg: 20 }, ml: 1 },
+  description: {
+    fontSize: { md: 40, lg: 18 },
+  },
 };
 
 export default Certifications;

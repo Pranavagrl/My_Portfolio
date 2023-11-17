@@ -5,11 +5,11 @@ import Footer from "./Footer";
 
 const Project = () => {
   return (
-    <Box sx={{ marginX: { md: 20, lg: 40, sm: 10, xl: 60 }, marginTop: 7 }}>
+    <Box>
       <Typography
         variant="h4"
         color="#21243D"
-        sx={{ fontWeight: "bold", mb: 6 }}
+        sx={{ fontWeight: "bold", my: 5, textAlign: "center" }}
       >
         Projects
       </Typography>
