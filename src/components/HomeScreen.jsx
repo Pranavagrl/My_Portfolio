@@ -14,15 +14,7 @@ const HomeScreen = () => {
         <Certifications />
       </Box>
 
-      <Typography
-        sx={{
-          textAlign: "center",
-          fontSize: { md: 42, lg: 18 },
-          py: 2,
-        }}
-      >
-        Projects
-      </Typography>
+      <Typography sx={styles.title}>Projects</Typography>
 
       <Projects projectsToShow={3} />
 
@@ -44,5 +36,11 @@ const styles = {
       lg: "space-evenly",
       xl: "space-evenly",
     },
+  },
+
+  title: {
+    textAlign: "center",
+    fontSize: { md: 42, lg: 18 },
+    py: 2,
   },
 };
