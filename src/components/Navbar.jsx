@@ -10,65 +10,11 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-
-// const pages = ["Home", "Project", "WorkExperience", "Contact"];
-
-// const Navbar = () => {
-//   return (
-//     <Toolbar disableGutters>
-//       <IconButton
-//         size="large"
-//         edge="start"
-//         color="inherit"
-//         aria-label="menu"
-//         sx={{ mx: 1, fontWeight: "bold" }}
-//       >
-//         <MenuIcon />
-//       </IconButton>
-//       <Typography variant="h5" sx={{ flexGrow: 1, fontWeight: "bold" }}>
-//         Portfolio
-//       </Typography>
-//       <Box
-//         sx={{
-//           flexGrow: 0,
-//           display: { md: "none", lg: "flex" },
-//           mr: 4,
-//         }}
-//       >
-//         {pages.map((page) => (
-//           <Button
-//             key={page}
-//             sx={{
-//               my: 2,
-//               color: "#21243D",
-//               display: "block",
-//               fontWeight: "bold",
-//             }}
-//           >
-//             <Link
-//               style={{
-//                 textDecoration: "none",
-//                 color: "#21243D",
-//                 fontSize: "bold",
-//               }}
-//               to={`/${page}`}
-//             >
-//               {page}
-//             </Link>
-//           </Button>
-//         ))}
-//       </Box>
-//     </Toolbar>
-//   );
-// };
-
-// export default Navbar;
 
 const drawerWidth = 600;
 const navItems = ["Home", "Project", "WorkExperience", "Contact"];
@@ -81,8 +27,8 @@ function Navbar(props) {
   };
 
   const drawerForMobileDevices = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ py: 4, color: "#21243D", fontSize: 60 }}>
+    <Box onClick={handleDrawerToggle} sx={styles.alignment}>
+      <Typography variant="h6" sx={styles.heading}>
         Portfolio
       </Typography>
       <Divider />
@@ -92,14 +38,11 @@ function Navbar(props) {
             <ListItemButton
               component={Link}
               to={`/${item}`}
-              sx={{
-                textAlign: "center",
-              }}
+              sx={styles.alignment}
             >
-              <Typography variant="h6" sx={{ fontSize: "60px", py: 2 }}>
+              <Typography variant="h6" sx={styles.navItems}>
                 {item}
               </Typography>
-              {/* <ListItemText primary={item} /> */}
             </ListItemButton>
           </ListItem>
         ))}
@@ -108,12 +51,8 @@ function Navbar(props) {
   );
 
   return (
-    <Box sx={{ display: "flex", mb: { xs: 15, lg: 5 } }}>
-      <CssBaseline />
-      <AppBar
-        component="nav"
-        sx={{ backgroundColor: "#fff", boxShadow: "none" }}
-      >
+    <Box sx={styles.container}>
+      <AppBar component="nav" sx={styles.appbarElement}>
         <Toolbar>
           <IconButton
             size="large"
@@ -121,45 +60,22 @@ function Navbar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{
-              mr: 2,
-              display: { sm: "flex", lg: "none" },
-              color: "#21243D",
-            }}
+            sx={styles.iconStyle}
           >
             <MenuIcon sx={{ fontSize: 75 }} />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", lg: "block" },
-              color: "#21243D",
-            }}
+            sx={styles.title}
             onClick={handleDrawerToggle}
           >
             Portfolio
           </Typography>
-          <Box sx={{ display: { xs: "none", lg: "flex" } }}>
+          <Box sx={styles.itemElement}>
             {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={{
-                  my: 2,
-                  color: "#21243D",
-                  display: "block",
-                  fontWeight: "bold",
-                }}
-              >
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "#21243D",
-                    fontSize: "bold",
-                  }}
-                  to={`/${item}`}
-                >
+              <Button key={item} sx={styles.buttonStyle}>
+                <Link style={styles.buttonlink} to={`/${item}`}>
                   {item}
                 </Link>
               </Button>
@@ -175,13 +91,7 @@ function Navbar(props) {
           ModalProps={{
             keepMounted: true,
           }}
-          sx={{
-            display: { xs: "block", lg: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+          sx={styles.drawerStyle}
         >
           {drawerForMobileDevices}
         </Drawer>
@@ -191,3 +101,44 @@ function Navbar(props) {
 }
 
 export default Navbar;
+
+const styles = {
+  heading: { py: 4, color: "#21243D", fontSize: 60 },
+  alignment: { textAlign: "center" },
+  navItems: { fontSize: "50px", py: 2 },
+  container: { display: "flex", mb: { xs: 15, lg: 5 } },
+  appbarElement: { backgroundColor: "#fff", boxShadow: "none" },
+  iconStyle: {
+    mr: 2,
+    display: { sm: "flex", lg: "none" },
+    color: "#21243D",
+  },
+  title: {
+    flexGrow: 1,
+    display: { xs: "none", lg: "block" },
+    color: "#21243D",
+  },
+
+  itemElement: { display: { xs: "none", lg: "flex" } },
+
+  buttonStyle: {
+    my: 2,
+    color: "#21243D",
+    display: "block",
+    fontWeight: "bold",
+  },
+
+  buttonlink: {
+    textDecoration: "none",
+    color: "#21243D",
+    fontSize: "bold",
+  },
+
+  drawerStyle: {
+    display: { xs: "block", lg: "none" },
+    "& .MuiDrawer-paper": {
+      boxSizing: "border-box",
+      width: drawerWidth,
+    },
+  },
+};

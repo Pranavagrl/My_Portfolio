@@ -67,8 +67,9 @@ const styles = {
 
   chipStyle: {
     mb: { md: 3, lg: 2 },
-    p: { md: 3, lg: 0 },
-    fontSize: { md: 35, lg: 20 },
+    p: { md: 5, lg: 0 },
+    fontSize: { md: 50, lg: 20 },
+    borderRadius: 50,
     fontWeight: "bold",
     color: "white",
     backgroundColor: "#21243D",
