@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./components/Navbar";
 import { Stack } from "@mui/material";
 import { Route, Routes } from "react-router";
 import HomeScreen from "./components/HomeScreen";
 import Contact from "./components/Contact";
 import WorkExperience from "./components/WorkExperience";
 import Project from "./components/Project";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
