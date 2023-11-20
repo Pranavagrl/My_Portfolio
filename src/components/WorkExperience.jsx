@@ -55,7 +55,7 @@ const styles = {
 
   imageStyle: {
     minWidth: { lg: "280px", md: "350px" },
-    width: { xl: "230px" },
+    width: { lg: "230px" },
     p: { md: 5, lg: 0 },
     mr: 2,
   },
