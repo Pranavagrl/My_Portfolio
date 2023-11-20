@@ -46,7 +46,7 @@ export default WorkExperience;
 const styles = {
   card_container: {
     display: "flex",
-    flexDirection: { md: "column", lg: "row" },
+    flexDirection: { sm: "column", lg: "row" },
     justifyContent: "center",
     alignItems: "center",
   },
