@@ -1,6 +1,6 @@
 import { Avatar, Box, Card, Typography } from "@mui/material";
 import React from "react";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   return (

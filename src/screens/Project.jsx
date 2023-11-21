@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import Projects from "./Projects";
-import Footer from "./Footer";
+import Projects from "../components/Projects";
+import Footer from "../components/Footer";
 
 const Project = () => {
   return (

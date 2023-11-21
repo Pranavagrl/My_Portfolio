@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import HeroBanner from "./HeroBanner";
-import Certifications from "./Certifications";
-import Projects from "./Projects";
-import Footer from "./Footer";
+import HeroBanner from "../components/HeroBanner";
+import Certifications from "../components/Certifications";
+import Projects from "../components/Projects";
+import Footer from "../components/Footer";
 
 const HomeScreen = () => {
   return (

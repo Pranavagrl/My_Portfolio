@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import WorkData from "../utils/WorkData";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 const WorkExperience = () => {
   return (
